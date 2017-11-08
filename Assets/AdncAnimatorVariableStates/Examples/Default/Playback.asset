@@ -15,16 +15,27 @@ MonoBehaviour:
   floats: []
   ints: []
   triggers: []
-  waitForCondition: 0
+  waitForCondition: 1
   conditions:
-  - varType: 0
-    varBool:
+  - variableType: 0
+    variableBool:
+      name: a
+      value: 0
+    compareValues: 0
+    variableFloat:
       name: 
       value: 0
-    compareNumbers: 0
-    VarFloat:
+    variableInt:
       name: 
       value: 0
-    VarInt:
+  - variableType: 1
+    variableBool:
+      name: b
+      value: 1
+    compareValues: 0
+    variableFloat:
+      name: 
+      value: 0
+    variableInt:
       name: 
       value: 0

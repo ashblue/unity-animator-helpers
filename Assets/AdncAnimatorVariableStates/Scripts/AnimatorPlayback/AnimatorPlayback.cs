@@ -30,12 +30,15 @@ namespace Adnc.AnimatorVariables {
 		};
 
 		/// <summary>
-		/// Set the Animator variables
+		/// Play the animation without a callback that checks if a specific condition has been met
 		/// </summary>
 		/// <param name="anim"></param>
-		/// <param name="completeCallback">Fired when the complete condition is met. No complete
-		/// condition will cause this to fire immediately</param>
-		public void Play (Animator anim, Action completeCallback = null) {
+		/// <returns></returns>
+		public bool Play (Animator anim) {
+			if (anim == null) {
+				return false;
+			}
+
 			foreach (var varBool in bools) {
 				anim.SetBool(varBool.name, varBool.value);
 			}
@@ -52,7 +55,37 @@ namespace Adnc.AnimatorVariables {
 				anim.SetTrigger(varTrigger.name);
 			}
 
-			// @TODO Start coroutine here (see old implementation in pathfinding 2D)
+			return true;
+		}
+
+		/// <summary>
+		/// Play the animation with a coroutine that returns when the required condition has been met
+		/// </summary>
+		/// <param name="anim"></param>
+		/// <returns></returns>
+		public IEnumerator PlayCoroutine (Animator anim) {
+			if (!Play(anim) || !waitForCondition) {
+				yield break;
+			}
+
+			while (!IsConditionsMet(anim)) {
+				yield return null;
+			}
+		}
+
+		/// <summary>
+		/// Checks if all conditions on the animator have been met
+		/// </summary>
+		/// <param name="anim"></param>
+		/// <returns></returns>
+		public bool IsConditionsMet (Animator anim) {
+			var isValid = false;
+			foreach (var condition in conditions) {
+				isValid = condition.IsConditionMet(anim);
+				if (!isValid) break;
+			}
+
+			return isValid;
 		}
 	}
 }
