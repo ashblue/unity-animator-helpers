@@ -5,7 +5,7 @@ using Adnc.AnimatorVariables.Variables;
 using UnityEngine;
 
 namespace Adnc.AnimatorVariables {
-	[CreateAssetMenu(fileName = "AnimatorPlayBack", menuName = "ADNC/Animator Variables/Animator Playback", order = 1)]
+	[CreateAssetMenu(fileName = "Playback", menuName = "ADNC/Animator Variables/Animator Playback", order = 1)]
 	public class AnimatorPlayback : ScriptableObject {
 		[HideInInspector]
 		public List<VarBool> bools = new List<VarBool>();

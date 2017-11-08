@@ -18,15 +18,18 @@ namespace Adnc.AnimatorVariables.Editors.CustomEditors {
 			_listTriggers = new SortableListAnimatorVariable(this, "triggers", "Set Triggers");
 		}
 
-		public override void OnInspectorGUI () {
-			_listBools.Update();
-			_listFloats.Update();
-			_listInts.Update();
-			_listTriggers.Update();
+        public override void OnInspectorGUI () {
+            serializedObject.Update();
 
-			base.OnInspectorGUI();
-		}
-	}
+            _listBools.Update();
+            _listFloats.Update();
+            _listInts.Update();
+            _listTriggers.Update();
+
+	        var propWait = serializedObject.FindProperty("waitForCondition");
+	        EditorGUILayout.PropertyField(propWait);
+
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
 }
-
-
