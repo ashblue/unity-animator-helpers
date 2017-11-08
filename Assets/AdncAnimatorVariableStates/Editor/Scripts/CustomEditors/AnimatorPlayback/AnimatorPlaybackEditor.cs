@@ -29,6 +29,11 @@ namespace Adnc.AnimatorVariables.Editors.CustomEditors {
 	        var propWait = serializedObject.FindProperty("waitForCondition");
 	        EditorGUILayout.PropertyField(propWait);
 
+	        if (propWait.boolValue) {
+		        var propCondition = serializedObject.FindProperty("conditions");
+		        EditorGUILayout.PropertyField(propCondition, true);
+	        }
+
             serializedObject.ApplyModifiedProperties();
         }
     }

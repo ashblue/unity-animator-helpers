@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Adnc.AnimatorVariables.Conditions;
 using Adnc.AnimatorVariables.Variables;
+using Adnc.Utility;
 using UnityEngine;
 
 namespace Adnc.AnimatorVariables {
@@ -19,8 +21,13 @@ namespace Adnc.AnimatorVariables {
 		[HideInInspector]
 		public List<VarTrigger> triggers = new List<VarTrigger>();
 
-		[Tooltip("If a condition is required to complete the animator playback")]
+		[Tooltip("If a condition is required to complete the animator playback. When the condition is met" +
+		         " a true event will be fired")]
 		public bool waitForCondition;
+
+		public List<Condition> conditions = new List<Condition> {
+			new Condition()
+		};
 
 		/// <summary>
 		/// Set the Animator variables
