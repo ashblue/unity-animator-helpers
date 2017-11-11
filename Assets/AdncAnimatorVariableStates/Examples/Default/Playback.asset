@@ -34,7 +34,7 @@ MonoBehaviour:
       value: 1
     compareValues: 0
     variableFloat:
-      name: 
+      name: b
       value: 0
     variableInt:
       name: 
