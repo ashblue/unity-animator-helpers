@@ -5,6 +5,9 @@ custom scripts to Animator parameters easy. Works with 2D or 3D projects.
 
 ## Quick Start Guide
 
+Grab the export package and import it into your Unity project
+ [Assets/Dist/AdncAnimatorHelpers.unitypackage](/Assets/Dist/AdncAnimatorHelpers.unitypackage)
+
 ### AnimatorPlayback Objects
 
 How to use an AnimatorPlayback to play animations with variables.
