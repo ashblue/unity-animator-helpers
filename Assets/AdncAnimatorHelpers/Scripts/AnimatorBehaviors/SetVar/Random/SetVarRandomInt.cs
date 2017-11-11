@@ -1,7 +1,7 @@
 ﻿using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     public class SetVarRandomInt : SetVarBase {
         [Tooltip("Random value generated each time this state triggers")]
         [SerializeField]

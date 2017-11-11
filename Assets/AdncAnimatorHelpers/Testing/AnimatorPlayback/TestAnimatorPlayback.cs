@@ -1,12 +1,12 @@
 ﻿using System.Collections;
-using Adnc.AnimatorVariables.Conditions;
-using Adnc.AnimatorVariables.Variables;
+using Adnc.AnimatorHelpers.Conditions;
+using Adnc.AnimatorHelpers.Variables;
 using Adnc.Utility.Testing;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace Adnc.AnimatorVariables.Testing {
+namespace Adnc.AnimatorHelpers.Testing {
     public class TestAnimatorPlayback : TestBase {
         private const string ANIMATOR_STUB_LOC = "AnimatorTesting/AnimatorStub";
 

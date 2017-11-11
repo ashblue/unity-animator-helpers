@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Variables {
+namespace Adnc.AnimatorHelpers.Variables {
     [System.Serializable]
     public class VarInt : VarBase<int> {
         [Tooltip(VALUE_TOOLTIP)]

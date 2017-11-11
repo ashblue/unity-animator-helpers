@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     public class SetVarBool : SetVarBase {
         [SerializeField]
         private bool _value;

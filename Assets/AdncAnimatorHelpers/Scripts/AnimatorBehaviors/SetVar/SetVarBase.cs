@@ -1,7 +1,7 @@
 ﻿using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     public abstract class SetVarBase : AnimatorActionBase {
         [Tooltip("When to trigger the event during the state's cycle")]
         [SerializeField]

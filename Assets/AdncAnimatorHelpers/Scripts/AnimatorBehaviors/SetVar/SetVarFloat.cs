@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     public class SetVarFloat : SetVarBase {
         [SerializeField]
         private float _value;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     /// <summary>
     /// Basic underlying logic for triggering an action
     /// </summary>

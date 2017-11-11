@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Variables {
+namespace Adnc.AnimatorHelpers.Variables {
     [System.Serializable]
     public class VarTrigger : VarBase<bool> {
         public override void SetValue (Animator animator) {

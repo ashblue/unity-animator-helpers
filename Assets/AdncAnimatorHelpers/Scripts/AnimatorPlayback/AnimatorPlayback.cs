@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Adnc.AnimatorVariables.Conditions;
-using Adnc.AnimatorVariables.Variables;
+using Adnc.AnimatorHelpers.Conditions;
+using Adnc.AnimatorHelpers.Variables;
 using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables {
+namespace Adnc.AnimatorHelpers {
 	[CreateAssetMenu(fileName = "Playback", menuName = "ADNC/Animator Variables/Animator Playback", order = 1)]
 	public class AnimatorPlayback : ScriptableObject {
 		[HideInInspector]

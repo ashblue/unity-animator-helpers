@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Editors.CustomEditors {
+namespace Adnc.AnimatorHelpers.Editors.CustomEditors {
 	[CustomEditor(typeof(AnimatorPlayback))]
 	public class AnimatorPlaybackEditor : Editor {
 		private SortableListAnimatorVariable _listBools;

@@ -1,7 +1,7 @@
 ﻿using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.AnimatorBehaviors {
+namespace Adnc.AnimatorHelpers.AnimatorBehaviors {
     /// <summary>
     /// Randomize the current playback position of this state's animation
     /// </summary>

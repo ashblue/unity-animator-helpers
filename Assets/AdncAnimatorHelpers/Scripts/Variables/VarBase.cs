@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Variables {
+namespace Adnc.AnimatorHelpers.Variables {
     public abstract class VarBase<T> {
         protected const string VALUE_TOOLTIP = "The value that will be set when SetValue is called";
 

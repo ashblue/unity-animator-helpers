@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Examples {
+namespace Adnc.AnimatorHelpers.Examples {
     public class AnimatorPlaybackExample : MonoBehaviour {
         [SerializeField]
         private AnimatorPlayback _completeEvent;

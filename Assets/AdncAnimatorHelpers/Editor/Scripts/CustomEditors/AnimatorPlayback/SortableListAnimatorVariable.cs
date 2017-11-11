@@ -4,7 +4,7 @@ using Adnc.Utility.Editors;
 using UnityEditor;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Editors.CustomEditors {
+namespace Adnc.AnimatorHelpers.Editors.CustomEditors {
 	public class SortableListAnimatorVariable : SortableListBase {
 		public SortableListAnimatorVariable (Editor editor, string property, string title) : base(editor, property, title) {
 			_list.drawElementCallback = (rect, index, active, focused) => {

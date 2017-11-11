@@ -1,9 +1,9 @@
 ﻿using System;
-using Adnc.AnimatorVariables.Variables;
+using Adnc.AnimatorHelpers.Variables;
 using Adnc.Utility;
 using UnityEngine;
 
-namespace Adnc.AnimatorVariables.Conditions {
+namespace Adnc.AnimatorHelpers.Conditions {
 	[Serializable]
 	public class Condition {
 		const float FLOAT_POINT_COMPARE = 0.01f;
