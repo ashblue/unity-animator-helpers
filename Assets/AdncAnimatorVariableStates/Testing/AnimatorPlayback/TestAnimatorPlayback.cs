@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Adnc.AnimatorVariables.Conditions;
 using Adnc.AnimatorVariables.Variables;
 using Adnc.Utility.Testing;
 using NUnit.Framework;
@@ -11,6 +12,7 @@ namespace Adnc.AnimatorVariables.Testing {
 
         private AnimatorPlayback _playback;
         private Animator _anim;
+        private bool _isPlayCoroutineActive;
 
         [SetUp]
         public void SetupAnimatorPlayback () {
@@ -37,6 +39,36 @@ namespace Adnc.AnimatorVariables.Testing {
             yield return new WaitForEndOfFrame();
 
             Assert.IsFalse(_anim.GetCurrentAnimatorStateInfo(0).IsName("New State"));
+        }
+
+        [UnityTest]
+        public IEnumerator PlayCoroutineWaitsForCondition () {
+            yield return new WaitForEndOfFrame();
+
+            _playback.conditions[0].variableType = ConditionVarType.Bool;
+            _playback.conditions[0].variableBool = new VarBool {
+                name = "bool",
+                value = true
+            };
+
+            Assert.AreEqual(1, _playback.conditions.Count);
+            Assert.IsNotNull(_playback.conditions[0].variableBool.name);
+
+            yield return PlayCoroutineWrapper();
+
+            Assert.IsFalse(_isPlayCoroutineActive);
+        }
+
+        IEnumerator PlayCoroutineWrapper () {
+            _playback.waitForCondition = true;
+            _isPlayCoroutineActive = true;
+
+            var c = _playback.PlayCoroutine(_anim);
+            _anim.SetBool("bool", true);
+
+            yield return c;
+
+            _isPlayCoroutineActive = false;
         }
     }
 }

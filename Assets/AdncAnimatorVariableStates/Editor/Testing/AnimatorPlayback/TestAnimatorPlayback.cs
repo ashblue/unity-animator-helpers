@@ -84,11 +84,13 @@ namespace Adnc.AnimatorVariables.Editors.Testing {
 
         [Test]
         public void IsConditionMetIsTrueWithNoConditions () {
+            _playback.conditions.RemoveAt(0);
             Assert.IsTrue(_playback.IsConditionsMet(_anim));
         }
 
         [Test]
         public void IsConditionMetFalseWhenConditionsNotMet () {
+            _playback.conditions.RemoveAt(0);
             _playback.conditions.Add(new Condition {
                 compareValues = OperatorAll.AreEqual,
                 variableBool = new VarBool {
@@ -103,6 +105,7 @@ namespace Adnc.AnimatorVariables.Editors.Testing {
 
         [Test]
         public void IsConditionMetTrueWhenConditionsAreMet () {
+            _playback.conditions.RemoveAt(0);
             _playback.conditions.Add(new Condition {
                 compareValues = OperatorAll.AreEqual,
                 variableBool = new VarBool {
