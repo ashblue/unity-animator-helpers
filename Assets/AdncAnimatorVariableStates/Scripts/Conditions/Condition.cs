@@ -34,6 +34,10 @@ namespace Adnc.AnimatorVariables.Conditions {
 		public VarInt variableInt = new VarInt();
 
 		public bool IsConditionMet (Animator animator) {
+			if (animator == null) {
+				return true;
+			}
+
 			switch (variableType) {
 				case ConditionVarType.Bool:
 					return animator.GetBool(variableBool.name) == variableBool.value;

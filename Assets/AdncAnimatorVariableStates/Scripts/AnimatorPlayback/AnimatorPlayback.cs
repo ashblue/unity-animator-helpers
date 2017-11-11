@@ -79,7 +79,7 @@ namespace Adnc.AnimatorVariables {
 		/// <param name="anim"></param>
 		/// <returns></returns>
 		public bool IsConditionsMet (Animator anim) {
-			var isValid = false;
+			var isValid = true;
 			foreach (var condition in conditions) {
 				isValid = condition.IsConditionMet(anim);
 				if (!isValid) break;
