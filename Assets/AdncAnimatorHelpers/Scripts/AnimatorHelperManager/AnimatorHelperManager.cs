@@ -1,5 +1,4 @@
-﻿namespace AdncAnimatorHelpers.Scripts.AnimatorHelperManager {
-    public class AnimatorHelperManager {
-        
+﻿namespace Adnc.AnimatorHelpers {
+    public class AnimatorHelperManager : Singleton<AnimatorHelperManager> {
     }
 }

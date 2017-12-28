@@ -1,7 +1,7 @@
 ﻿using Adnc.AnimatorHelpers.Conditions;
 using Adnc.AnimatorHelpers.Variables;
 using Adnc.Utility.Testing;
-using AdncAnimatorHelpers.Editor.Testing.Utilities;
+using Adnc.AnimatorHelpers.Editors.Testing.Utilities;
 using NUnit.Framework;
 using UnityEngine;
 using Object = UnityEngine.Object;

@@ -1,10 +1,11 @@
-﻿using AdncAnimatorHelpers.Editor.Testing.Utilities;
+﻿using Adnc.Utility.Testing;
+using Adnc.AnimatorHelpers.Editors.Testing.Utilities;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Adnc.AnimatorHelpers.Editors.Testing.Examples {
+namespace Adnc.AnimatorHelpers.Editors.Testing {
     [Category("Examples")]
-    public class TestAnimatorStub {
+    public class TestAnimatorStub : TestBase {
         private GameObject _go;
         private AnimatorStub _animStub;
 

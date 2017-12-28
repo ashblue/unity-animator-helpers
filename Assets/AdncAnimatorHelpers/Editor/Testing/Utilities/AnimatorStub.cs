@@ -1,7 +1,7 @@
 ﻿using UnityEditor.Animations;
 using UnityEngine;
 
-namespace AdncAnimatorHelpers.Editor.Testing.Utilities {
+namespace Adnc.AnimatorHelpers.Editors.Testing.Utilities {
     public class AnimatorStub {
         /// <summary>
         /// Reference to the Animator attached to the passed GameObject
