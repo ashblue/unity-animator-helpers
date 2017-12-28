@@ -132,5 +132,16 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
             var stateInfo = stub.Animator.GetCurrentAnimatorStateInfo(0);
             Assert.IsTrue(stateInfo.IsName(stateName));
         }
+
+        [Test]
+        public void RuntimeControllerNameSameAsCreationName () {
+            var stub = new AnimatorStub(_go);
+
+            stub.AnimatorCtrl.name = "asdf";
+            stub.InjectCtrl();
+
+            Assert.AreEqual(stub.AnimatorCtrl.name, stub.Animator.runtimeAnimatorController.name);
+            Assert.AreNotEqual(stub.Animator.gameObject.name, stub.Animator.runtimeAnimatorController.name);
+        }
     }
 }
