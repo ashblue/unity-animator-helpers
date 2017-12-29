@@ -57,7 +57,7 @@ namespace Adnc.AnimatorHelpers {
                 return;
             }
 
-            DestroyImmediate(_instance);
+            DestroyImmediate(_instance.gameObject);
             _instance = null;
         }
     }

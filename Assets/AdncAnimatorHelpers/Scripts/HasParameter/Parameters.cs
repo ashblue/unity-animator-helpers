@@ -6,6 +6,10 @@ namespace Adnc.AnimatorHelpers.HasParameters {
         public readonly Dictionary<string, KeyValue<V>> dic = new Dictionary<string, KeyValue<V>>();
 
         public KeyValue<V> Add (string key, V value) {
+            if (dic.ContainsKey(key)) {
+                return dic[key];
+            }
+
             var kv = new KeyValue<V> {
                 key = key,
                 value = value
