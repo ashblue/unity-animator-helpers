@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Adnc.Utility {
+	[System.Obsolete("Please use Adnc.AnimatorHelpers.AnimatorPlayback instead")]
 	[System.Serializable]
 	public class AnimatorPlayback {
 		// When playing an animation twice it will always reset

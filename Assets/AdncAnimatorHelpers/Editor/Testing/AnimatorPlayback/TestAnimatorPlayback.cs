@@ -1,6 +1,7 @@
 ﻿using Adnc.AnimatorHelpers.Conditions;
 using Adnc.AnimatorHelpers.Variables;
 using Adnc.Utility.Testing;
+using Adnc.AnimatorHelpers.Editors.Testing.Utilities;
 using NUnit.Framework;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -10,35 +11,41 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
         private const string ANIMATOR_STUB_LOC = "AnimatorTesting/AnimatorStub";
 
         private AnimatorPlayback _playback;
-        private Animator _anim;
+        private AnimatorStub _stub;
 
         [SetUp]
         public void SetupAnimatorPlayback () {
             _playback = ScriptableObject.CreateInstance<AnimatorPlayback>();
-            var stub = Resources.Load<GameObject>(ANIMATOR_STUB_LOC);
-            _anim = Object.Instantiate(stub).GetComponent<Animator>();
+
+            _stub = new AnimatorStub(new GameObject("AnimatorStub"));
+            _stub.AnimatorCtrl.AddParameter("bool", AnimatorControllerParameterType.Bool);
+            _stub.AnimatorCtrl.AddParameter("float", AnimatorControllerParameterType.Float);
+            _stub.AnimatorCtrl.AddParameter("int", AnimatorControllerParameterType.Int);
+            _stub.AnimatorCtrl.AddParameter("trigger", AnimatorControllerParameterType.Trigger);
+
+            _stub.InjectCtrl();
         }
 
         [TearDown]
         public void TeardownAnimatorPlayback () {
-            Object.DestroyImmediate(_anim.gameObject);
+            Object.DestroyImmediate(_stub.Animator.gameObject);
             _playback = null;
-            _anim = null;
+            _stub = null;
         }
 
         [Test]
         public void StubBoolIsFalse () {
-            Assert.IsFalse(_anim.GetBool("bool"));
+            Assert.IsFalse(_stub.Animator.GetBool("bool"));
         }
 
         [Test]
         public void StubFloatIsZero () {
-            Assert.IsTrue(Mathf.Abs(_anim.GetFloat("float")) < 0.1f);
+            Assert.IsTrue(Mathf.Abs(_stub.Animator.GetFloat("float")) < 0.1f);
         }
 
         [Test]
         public void StubIntIsZero () {
-            Assert.IsTrue(_anim.GetInteger("int") == 0);
+            Assert.IsTrue(_stub.Animator.GetInteger("int") == 0);
         }
 
         [Test]
@@ -48,9 +55,9 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
                 value = true
             });
 
-            _playback.Play(_anim);
+            _playback.Play(_stub.Animator);
 
-            Assert.IsTrue(_anim.GetBool("bool"));
+            Assert.IsTrue(_stub.Animator.GetBool("bool"));
         }
 
         [Test]
@@ -60,9 +67,9 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
                 value = 1
             });
 
-            _playback.Play(_anim);
+            _playback.Play(_stub.Animator);
 
-            Assert.AreEqual(_anim.GetFloat("float"), 1);
+            Assert.AreEqual(_stub.Animator.GetFloat("float"), 1);
         }
 
         [Test]
@@ -72,9 +79,9 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
                 value = 1
             });
 
-            _playback.Play(_anim);
+            _playback.Play(_stub.Animator);
 
-            Assert.AreEqual(_anim.GetInteger("int"), 1);
+            Assert.AreEqual(_stub.Animator.GetInteger("int"), 1);
         }
 
         [Test]
@@ -85,7 +92,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
         [Test]
         public void IsConditionMetIsTrueWithNoConditions () {
             _playback.conditions.RemoveAt(0);
-            Assert.IsTrue(_playback.IsConditionsMet(_anim));
+            Assert.IsTrue(_playback.IsConditionsMet(_stub.Animator));
         }
 
         [Test]
@@ -100,7 +107,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
                 variableType = ConditionVarType.Bool
             });
 
-            Assert.IsFalse(_playback.IsConditionsMet(_anim));
+            Assert.IsFalse(_playback.IsConditionsMet(_stub.Animator));
         }
 
         [Test]
@@ -115,9 +122,11 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
                 variableType = ConditionVarType.Bool
             });
 
-            _anim.SetBool("bool", true);
+            _stub.Animator.SetBool("bool", true);
 
-            Assert.IsTrue(_playback.IsConditionsMet(_anim));
+            Assert.IsTrue(_playback.IsConditionsMet(_stub.Animator));
         }
+
+
     }
 }
