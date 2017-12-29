@@ -4,7 +4,6 @@ using NUnit.Framework;
 using UnityEngine;
 
 namespace Adnc.AnimatorHelpers.Editors.Testing {
-    [Category("Examples")]
     public class TestAnimatorStub : TestBase {
         private GameObject _go;
         private AnimatorStub _animStub;
