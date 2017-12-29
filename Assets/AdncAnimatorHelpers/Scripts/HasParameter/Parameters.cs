@@ -5,7 +5,7 @@ namespace Adnc.AnimatorHelpers.HasParameters {
         public readonly List<KeyValue<V>> list = new List<KeyValue<V>>();
         public readonly Dictionary<string, KeyValue<V>> dic = new Dictionary<string, KeyValue<V>>();
 
-        public void Add (string key, V value) {
+        public KeyValue<V> Add (string key, V value) {
             var kv = new KeyValue<V> {
                 key = key,
                 value = value
@@ -13,6 +13,8 @@ namespace Adnc.AnimatorHelpers.HasParameters {
 
             list.Add(kv);
             dic.Add(key, kv);
+
+            return kv;
         }
     }
 }

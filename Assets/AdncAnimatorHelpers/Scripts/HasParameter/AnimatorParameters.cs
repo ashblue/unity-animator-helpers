@@ -10,6 +10,10 @@ namespace Adnc.AnimatorHelpers.HasParameters {
         public readonly Parameters<string> triggers = new Parameters<string>();
 
         public AnimatorParameters (Animator animator) {
+            if (animator == null) {
+                throw new ArgumentNullException("animator");
+            }
+
             foreach (var p in animator.parameters) {
                 parameters.Add(p.name, p);
 
