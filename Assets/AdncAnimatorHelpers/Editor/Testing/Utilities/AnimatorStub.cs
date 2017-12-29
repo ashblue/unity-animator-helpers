@@ -1,7 +1,7 @@
 ﻿using UnityEditor.Animations;
 using UnityEngine;
 
-namespace AdncAnimatorHelpers.Editor.Testing.Utilities {
+namespace Adnc.AnimatorHelpers.Editors.Testing.Utilities {
     public class AnimatorStub {
         /// <summary>
         /// Reference to the Animator attached to the passed GameObject
@@ -24,11 +24,9 @@ namespace AdncAnimatorHelpers.Editor.Testing.Utilities {
         /// Inject the animator stub onto a GameObject
         /// </summary>
         /// <param name="target"></param>
-        public AnimatorStub (GameObject target) {
+        public AnimatorStub (GameObject target = null) {
             if (target == null) {
-                LogError("Please pass in a target to verify. Failed to generate an animator stub");
-
-                return;
+                target = new GameObject("AnimatorStub");
             }
 
             Animator = target.AddComponent<Animator>();

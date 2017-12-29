@@ -1,10 +1,10 @@
-﻿using AdncAnimatorHelpers.Editor.Testing.Utilities;
+﻿using Adnc.Utility.Testing;
+using Adnc.AnimatorHelpers.Editors.Testing.Utilities;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Adnc.AnimatorHelpers.Editors.Testing.Examples {
-    [Category("Examples")]
-    public class TestAnimatorStub {
+namespace Adnc.AnimatorHelpers.Editors.Testing {
+    public class TestAnimatorStub : TestBase {
         private GameObject _go;
         private AnimatorStub _animStub;
 
@@ -19,10 +19,10 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.Examples {
         }
 
         [Test]
-        public void FailsCreationIfNoGameObject () {
+        public void DoesNotFailCreationIfNoGameObject () {
             var stub = new AnimatorStub(null);
 
-            Assert.IsFalse(stub.IsValid);
+            Assert.IsTrue(stub.IsValid);
         }
 
         [Test]
@@ -130,6 +130,17 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.Examples {
 
             var stateInfo = stub.Animator.GetCurrentAnimatorStateInfo(0);
             Assert.IsTrue(stateInfo.IsName(stateName));
+        }
+
+        [Test]
+        public void RuntimeControllerNameSameAsCreationName () {
+            var stub = new AnimatorStub(_go);
+
+            stub.AnimatorCtrl.name = "asdf";
+            stub.InjectCtrl();
+
+            Assert.AreEqual(stub.AnimatorCtrl.name, stub.Animator.runtimeAnimatorController.name);
+            Assert.AreNotEqual(stub.Animator.gameObject.name, stub.Animator.runtimeAnimatorController.name);
         }
     }
 }
