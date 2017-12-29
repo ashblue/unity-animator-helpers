@@ -20,10 +20,10 @@ namespace Adnc.AnimatorHelpers.Editors.Testing {
         }
 
         [Test]
-        public void FailsCreationIfNoGameObject () {
+        public void DoesNotFailCreationIfNoGameObject () {
             var stub = new AnimatorStub(null);
 
-            Assert.IsFalse(stub.IsValid);
+            Assert.IsTrue(stub.IsValid);
         }
 
         [Test]

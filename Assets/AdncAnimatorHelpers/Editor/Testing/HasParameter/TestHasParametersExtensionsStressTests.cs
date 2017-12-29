@@ -21,6 +21,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.HasParameters {
             Object.DestroyImmediate(_stub.Animator.gameObject);
             _stub = null;
 
+            Object.DestroyImmediate(_runtime.gameObject);
             AnimatorHelperRuntime.ClearSingleton();
             _runtime = null;
         }
@@ -39,7 +40,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.HasParameters {
 
         [Test]
         public void CallWithHundredParameters () {
-            for (int i = 0; i < 100; i++) {
+            for (var i = 0; i < 100; i++) {
                 _stub.AnimatorCtrl.AddParameter(new AnimatorControllerParameter {
                     name = "bool" + i,
                     type = AnimatorControllerParameterType.Bool
@@ -53,7 +54,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.HasParameters {
 
         [Test]
         public void CallWithThosandParameters () {
-            for (int i = 0; i < 1000; i++) {
+            for (var i = 0; i < 1000; i++) {
                 _stub.AnimatorCtrl.AddParameter(new AnimatorControllerParameter {
                     name = "bool" + i,
                     type = AnimatorControllerParameterType.Bool

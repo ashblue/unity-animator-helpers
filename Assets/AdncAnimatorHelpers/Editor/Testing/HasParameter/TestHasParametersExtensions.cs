@@ -41,6 +41,7 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.HasParameters {
             Object.DestroyImmediate(_stub.Animator.gameObject);
             _stub = null;
 
+            Object.DestroyImmediate(_runtime.gameObject);
             AnimatorHelperRuntime.ClearSingleton();
             _runtime = null;
         }
@@ -79,6 +80,8 @@ namespace Adnc.AnimatorHelpers.Editors.Testing.HasParameters {
             Assert.IsTrue(AnimatorHelperRuntime.Instance.parameters.HasParameters(id));
 
             Assert.IsTrue(clone.HasParameter("bool"));
+
+            Object.DestroyImmediate(clone.gameObject);
         }
 
         [Test]
