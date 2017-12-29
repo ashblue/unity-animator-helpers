@@ -57,6 +57,7 @@ due to their level of complexity.
    * AnimatorPlayback objects to easily detect animation completion conditions
    * Pre-built library on AnimatorBehavior(s) for complex animation playback
    * Animator extensions that add missing functionality to Unity's Animator component
+   * Animator unit testing helper (for editor only tests)
    * Unit tested
 
 #### Requesting Features
@@ -125,3 +126,42 @@ call per unique `AnimatorController`. While this generally shouldn't cause perfo
 You may need to call `AnimatorHelperRuntime.Instance.Cache(Animator)` on `Start` or `Awake` if your `Animator(s)` 
 have over 300 parameters. Please note that your `AnimatorController` object (what you pass into the Animator via 
 inspector) must be uniquely named in order for the caching to work correctly.
+
+## Animator Unit Test Helper
+
+This library provides an `AnimatorStub` (editor only) class that makes testing animations via pure code super simple.
+All you need to do is the following.
+
+```c#
+using Adnc.AnimatorHelpers.Editors.Testing.Utilities;
+using NUnit.Framework;
+using UnityEngine;
+
+public class TestAnimatorStub {
+    private AnimatorStub _stub;
+    
+    [SetUp]
+    public void Setup () {
+        _stub = new AnimatorStub();
+    }
+
+    [TearDown]
+    public void Teardown () {
+        // The stub is attached to a GameObject, so it must be destroyed manually
+        Object.DestroyImmediate(_stub.Animator.gameObject);
+    }
+    
+    [Test]
+    public void MyTest () {
+        // Setup your AnimatorController as desired
+        stub.AnimatorCtrl.AddParameter("myBool", AnimatorControllerParameterType.Bool);
+        
+        // Inject a runtime version of the AnimatorController with all of your settings
+        stub.InjectCtrl();
+        
+        // Test as normal
+        // stub.Animator.Update(10); // If you need to simulate time
+        Assert.IsTrue(stub.Animator.HasBool("myBool));
+    }
+}
+```
