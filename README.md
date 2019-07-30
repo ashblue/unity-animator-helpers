@@ -1,7 +1,11 @@
 # Unity Animator Helpers
 
-A micro-framework for changing Unity 3D's Animator parameters with ScriptableObject(s). Designed to make going from
-custom scripts to Animator parameters easy. Works with 2D or 3D projects.
+Ever had to handle complex animations that require multiple frames such as jump, attack, or receiving damage? Generally this results in messy Animator variables and repeated code. Unity Animator Helpers provides a micro-framework to create modular animations that can be visually programmed and modularly shared between GameObjects.
+
+* Create animator variable changes from a ScriptableObject with visual programming
+* Share animator playback variable changes between GameObject(s)
+* Wait for multiple animator variable changes from a coroutine or loop
+* Pre-made library of common Animator Behaviors for visually programming the Animator with variable changes and randomization  
 
 ## Quick Start Guide
 
