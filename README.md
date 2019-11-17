@@ -7,6 +7,10 @@ Ever had to handle complex animations that require multiple frames such as jump,
 * Wait for multiple animator variable changes from a coroutine or loop
 * Pre-made library of common Animator Behaviors for visually programming the Animator with variable changes and randomization  
 
+**Support**
+
+Join the [Discord Community](https://discord.gg/8QHFfzn) if you have questions or need help.
+
 ## Quickstart
 
 ### AnimatorPlayback Objects
