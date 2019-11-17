@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Adnc.AnimatorHelpers {
 	[CreateAssetMenu(fileName = "Playback", menuName = "ADNC/Animator Variables/Animator Playback", order = 1)]
-	public class AnimatorPlayback : ScriptableObject {
+	public class AnimatorPlayback : ScriptableObject, IAnimatorPlayback {
 		[HideInInspector]
 		public List<VarBool> bools = new List<VarBool>();
 
