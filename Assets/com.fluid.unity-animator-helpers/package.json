@@ -1,7 +1,11 @@
 {
-  "name": "com.fluid.unity-animator-helpers",
-  "version": "0.0.0",
-  "displayName": "Unity Animator Helpers",
-  "description": "A set of Animator helper scripts to better streamline and handle animation playback",
-  "unity": "2019.1"
+    "name": "com.fluid.unity-animator-helpers",
+    "version": "0.0.0",
+    "displayName": "Unity Animator Helpers",
+    "description": "A set of Animator helper scripts to better streamline and handle animation playback",
+    "unity": "2019.1",
+    "dependencies": {
+        "com.fluid.simple-singleton": "1.0.0",
+        "com.fluid.adnc-utilities": "1.0.0"
+    }
 }
