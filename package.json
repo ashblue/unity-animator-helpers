@@ -1,6 +1,6 @@
 {
   "name": "com.fluid.unity-animator-helpers",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "unity": "2019.1",
   "displayName": "Unity Animator Helpers",
   "description": "A set of Animator helper scripts to better streamline and handle animation playback",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashblue/unity-animator-helpers.git"
+    "url": "https://github.com/ashblue/unity-animator-helpers.git"
   },
   "author": {
     "name": "Ash Blue",
@@ -49,7 +49,7 @@
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^2.3.0",
-    "semantic-release": "^15.13.12",
+    "semantic-release": "^15.13.30",
     "upm-package-populator": "^1.0.0"
   },
   "config": {
