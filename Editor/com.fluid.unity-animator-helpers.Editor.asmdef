@@ -1,12 +1,18 @@
 {
     "name": "com.fluid.unity-animator-helpers.Editor",
     "references": [
-        "com.fluid.unity-animator-helpers"
+        "com.fluid.unity-animator-helpers",
+        "com.fluid.simple-singleton",
+        "com.fluid.adnc-utilities.Editor"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
-    "allowUnsafeCode": false
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }
