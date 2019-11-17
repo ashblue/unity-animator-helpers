@@ -1,0 +1,19 @@
+{
+    "name": "com.fluid.unity-animator-helpers.Editor.Tests",
+    "references": [
+        "com.fluid.unity-animator-helpers",
+        "com.fluid.unity-animator-helpers.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

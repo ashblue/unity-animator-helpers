@@ -7,10 +7,7 @@ Ever had to handle complex animations that require multiple frames such as jump,
 * Wait for multiple animator variable changes from a coroutine or loop
 * Pre-made library of common Animator Behaviors for visually programming the Animator with variable changes and randomization  
 
-## Quick Start Guide
-
-Grab the export package and import it into your Unity project
- [Assets/Dist/AdncAnimatorHelpers.unitypackage](/Assets/Dist/AdncAnimatorHelpers.unitypackage)
+## Quickstart
 
 ### AnimatorPlayback Objects
 
@@ -56,7 +53,7 @@ public class AnimatorPlaybackExample : MonoBehaviour {
 Note that the AnimatorPlayback objects are fully unit and runtime tested
 due to their level of complexity.
 
-### Features
+#### Features
    
    * AnimatorPlayback objects to easily detect animation completion conditions
    * Pre-built library on AnimatorBehavior(s) for complex animation playback
@@ -64,14 +61,66 @@ due to their level of complexity.
    * Animator unit testing helper (for editor only tests)
    * Unit tested
 
-#### Requesting Features
+### Installation
 
-Please file a GitHub [issue ticket](https://github.com/ashblue/unity-animator-helpers/issues) if you'd like to 
-request a feature.
+Unity Animator Helpers is used through [Unity's Package Manager](https://docs.unity3d.com/Manual/CustomPackages.html). In order to use it you'll need to add the following lines to your `Packages/manifest.json` file. After that you'll be able to visually control what specific version of Unity Animator Helpers you're using from the package manager window in Unity. This has to be done so your Unity editor can connect to NPM's package registry.
 
-You can view the current [roadmap here](https://github.com/ashblue/unity-animator-helpers/projects/1).
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "NPM",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "com.fluid"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.fluid.unity-animator-helpers": "2.0.0"
+  }
+}
+```
 
-## Animator Behaviors
+### Releases
+
+Archives of specific versions and release notes are available on the [releases page](https://github.com/ashblue/unity-animator-helpers/releases).
+
+#### Nightly Builds
+
+To access nightly builds of the `develop` branch that are package manager friendly, you'll need to manually edit your `Packages/manifest.json` as so. 
+
+```json
+{
+    "dependencies": {
+      "com.fluid.unity-animator-helpers": "https://github.com/ashblue/unity-animator-helpers.git#nightly"
+    }
+}
+```
+
+Note that to get a newer nightly build you must delete this line and any related lock data in the manifest, let Unity rebuild, then add it back. As Unity locks the commit hash for Git urls as packages.
+
+### Development Environment
+
+If you wish to run to run the development environment you'll need to install the latest [node.js](https://nodejs.org/en/). Then run the following from the root once.
+
+`npm install`
+
+If you wish to create a build run `npm run build` from the root and it will populate the `dist` folder.
+
+#### Making Commits
+
+All commits should be made using [Commitizen](https://github.com/commitizen/cz-cli) (which is automatically installed when running `npm install`). Commits are automatically compiled to version numbers on release so this is very important. PRs that don't have Commitizen based commits will be rejected.
+
+To make a commit type the following into a terminal from the root
+
+```bash
+npm run commit
+```
+
+## Other Helper Libraries
+
+### Animator Behaviors
 
 There are several animator helper scripts to assist you with Animator Behavior(s).
 These are aimed at allowing you to interact with the Animator without having to write
@@ -79,7 +128,7 @@ additional scripts to tweak variables and playback.
 
 ![Preview of Playback Helper](/animator-helpers.png)
 
-### Available Helpers
+#### Available Helpers
 
 Here is a brief list of helpers. New ones will be added as the repo is updated over time.
 
@@ -94,7 +143,7 @@ Here is a brief list of helpers. New ones will be added as the repo is updated o
 
 See documentation on methods (in code) for complete details.
 
-## Animator Extensions
+### Animator Extensions
 
 Unity Animator Helpers extends the pre-existing functionality of Unity3D's built in `Animator` component with static
 extensions. This doesn't hurt or break any existing functionality. For example you could do the following to check if 
@@ -114,7 +163,7 @@ public class AnimatorExtensionExample : MonoBehaviour {
 }
 ``` 
 
-### Available Animator extensions
+#### Available Animator extensions
 
 * HasParameter(name)
 * HasBool(name)
@@ -131,7 +180,7 @@ You may need to call `AnimatorHelperRuntime.Instance.Cache(Animator)` on `Start`
 have over 300 parameters. Please note that your `AnimatorController` object (what you pass into the Animator via 
 inspector) must be uniquely named in order for the caching to work correctly.
 
-## Animator Unit Test Helper
+### Animator Unit Test Helper
 
 This library provides an `AnimatorStub` (editor only) class that makes testing animations via pure code super simple.
 All you need to do is the following.
@@ -169,3 +218,7 @@ public class TestAnimatorStub {
     }
 }
 ```
+
+---
+
+This project was generated with [Oyster Package Generator](https://github.com/ashblue/oyster-package-generator).

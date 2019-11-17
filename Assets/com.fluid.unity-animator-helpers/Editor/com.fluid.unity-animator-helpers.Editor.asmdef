@@ -1,0 +1,12 @@
+{
+    "name": "com.fluid.unity-animator-helpers.Editor",
+    "references": [
+        "com.fluid.unity-animator-helpers"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

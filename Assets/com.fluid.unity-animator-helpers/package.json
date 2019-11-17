@@ -1,0 +1,7 @@
+{
+  "name": "com.fluid.unity-animator-helpers",
+  "version": "0.0.0",
+  "displayName": "Unity Animator Helpers",
+  "description": "A set of Animator helper scripts to better streamline and handle animation playback",
+  "unity": "2019.1"
+}
