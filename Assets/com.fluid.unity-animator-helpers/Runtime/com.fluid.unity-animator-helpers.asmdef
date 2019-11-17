@@ -1,0 +1,15 @@
+{
+    "name": "com.fluid.unity-animator-helpers",
+    "references": [
+        "GUID:f5d482046df00ce42a8dd013cf8331bf",
+        "GUID:5d226a1776aa442e788ca15f9d2a42d0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
