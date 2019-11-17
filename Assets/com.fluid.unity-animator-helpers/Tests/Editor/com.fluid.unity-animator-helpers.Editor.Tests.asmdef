@@ -1,0 +1,24 @@
+{
+    "name": "com.fluid.unity-animator-helpers.Editor.Tests",
+    "references": [
+        "com.fluid.unity-animator-helpers",
+        "com.fluid.unity-animator-helpers.Editor",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "com.fluid.simple-singleton"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": []
+}
