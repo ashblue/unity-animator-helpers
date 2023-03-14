@@ -25,7 +25,7 @@ How to use the `AnimatorPlayback` object to play animations with variables.
 1. Attach the object to a MonoBehavior as so `AnimatorPlayback playback;`
 1. Call `playback.Play(MY_ANIMATOR);` to trigger the variables.
 
-Example script.
+There are [usage examples](https://github.com/ashblue/unity-animator-helpers/tree/develop/Assets/Examples/AnimatorPlayback) in the project. Here's an example script:
 
 ```c#
 public class AnimatorPlaybackExample : MonoBehaviour {
