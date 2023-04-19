@@ -44,12 +44,12 @@
     "@semantic-release/exec": "^3.3.2",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
-    "@semantic-release/npm": "^5.1.7",
+    "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^7.1.4",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^2.3.0",
-    "semantic-release": "^15.13.30",
+    "semantic-release": "^21.0.1",
     "upm-package-populator": "^1.0.0"
   },
   "config": {
